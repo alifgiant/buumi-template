@@ -15,7 +15,7 @@ jobs:
   build_apk:
     defaults:
       run:
-        working-directory: apps/bipang
+        working-directory: host
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
