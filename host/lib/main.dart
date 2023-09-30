@@ -1,7 +1,19 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runZonedGuarded<Future>(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      runApp(const MyApp());
+    },
+    (error, stack) {
+      FlutterError.onError?.call(
+        FlutterErrorDetails(exception: error, stack: stack),
+      );
+    },
+  );
 }
 
 class MyApp extends StatelessWidget {
