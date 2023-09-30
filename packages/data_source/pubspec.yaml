@@ -1,7 +1,7 @@
 name: data_source
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+publish_to: none
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   supabase_flutter: ^1.10.16
+  feature_scaffold:
+    path: '../feature_scaffold/'
 
 dev_dependencies:
   flutter_test:

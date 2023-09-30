@@ -1,11 +1,25 @@
 import 'dart:async';
 
+import 'package:analytic/analytic.dart';
+import 'package:feature_scaffold/feature_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:host/firebase_options.dart';
 
 void main() {
-  runZonedGuarded<Future>(
+  runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+
+      // create all features
+      final features = <Feature>[
+        FirebaseX(option: DefaultFirebaseOptions.currentPlatform),
+      ];
+
+      // install all depedency
+      await Future.wait(
+        List<FSetup>.from(features).map((e) => e.initialize()),
+      );
+
       runApp(const MyApp());
     },
     (error, stack) {

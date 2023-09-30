@@ -27,4 +27,6 @@ class Analytic {
       parameters: parameters,
     );
   }
+
+  static Analytic i = Analytic();
 }
