@@ -1,5 +1,6 @@
 library splash;
 
+import 'package:component/component.dart';
 import 'package:feature_scaffold/feature_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -24,9 +25,16 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: Text(runtimeType.toString()),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            AppLogo(),
+            CircularProgressIndicator(),
+          ],
+        ),
       ),
     );
   }

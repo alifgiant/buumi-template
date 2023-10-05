@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   go_router: ^11.1.2
+  component:
+    path: ../../packages/component/
   feature_scaffold:
     path: ../../packages/feature_scaffold/
   router:
