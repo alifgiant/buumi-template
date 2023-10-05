@@ -2,6 +2,7 @@ import 'package:feature_scaffold/feature_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:router/router.dart';
 
 void main() {
   final feature = TestFeature();
@@ -26,11 +27,14 @@ class TestFeature extends Feature with FSetup, FRoute {
   bool isInitialized = false;
 
   @override
-  final List<RouteBase> routes = [
-    GoRoute(
+  final List<RouteInfo> routes = [
+    RouteInfo(
       path: '/test',
-      builder: (_, __) => Container(),
-    ),
+      routeBase: GoRoute(
+        path: '/test',
+        builder: (_, __) => Container(),
+      ),
+    )
   ];
 
   @override

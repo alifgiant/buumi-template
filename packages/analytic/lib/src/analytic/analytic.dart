@@ -7,9 +7,11 @@ class Analytic {
     FirebaseAnalytics? instance,
   }) : _firebase = instance ?? FirebaseAnalytics.instance;
 
-  Future<void> logAppOpen() {
-    return _firebase.logAppOpen();
-  }
+  Future<void> logAppOpen() => _firebase.logAppOpen();
+
+  Future<void> logLogin() => _firebase.logLogin(loginMethod: 'email');
+
+  Future<void> logLogout() => logEvent('logout');
 
   Future<void> logScreenView({
     String? screenClass,
