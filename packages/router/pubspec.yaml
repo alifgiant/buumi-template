@@ -1,7 +1,7 @@
 name: router
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+publish_to: none
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   go_router: ^11.1.2
   flutter_riverpod: ^2.4.1
+  flutter_easyloading: ^3.0.5
 
 dev_dependencies:
   flutter_test:

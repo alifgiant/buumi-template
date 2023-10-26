@@ -35,11 +35,20 @@ void main() {
   });
 
   test(
-    'uppercased words, when toTitleCase will uppercase each first char and lower the rest',
+    'a word is uppercased, when toTitleCase will do title case for other words but skip already uppercased word',
+    () {
+      final result = 'ALIF aKbar'.toTitleCase();
+
+      expect(result, 'ALIF Akbar');
+    },
+  );
+
+  test(
+    'uppercased words, when toTitleCase will do nothing',
     () {
       final result = 'ALIF AKBAR'.toTitleCase();
 
-      expect(result, 'Alif Akbar');
+      expect(result, 'ALIF AKBAR');
     },
   );
 }

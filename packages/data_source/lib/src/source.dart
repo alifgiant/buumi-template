@@ -4,6 +4,7 @@ abstract class Source<T> {
   Future<T?> get(
     String id, {
     Map<String, dynamic> param = const {},
+    String idKey = 'id',
   });
 
   Future<Iterable<T>> getAll({
@@ -20,5 +21,6 @@ abstract class Source<T> {
   Future<void> delete(
     String id, {
     Map<String, dynamic> param = const {},
+    String idKey = 'id',
   });
 }

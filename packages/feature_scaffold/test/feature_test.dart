@@ -29,9 +29,9 @@ class TestFeature extends Feature with FSetup, FRoute {
   @override
   final List<RouteInfo> routes = [
     RouteInfo(
-      path: '/test',
-      routeBase: GoRoute(
-        path: '/test',
+      path: CommonPath.splash,
+      routeBuilder: (path) => GoRoute(
+        path: path,
         builder: (_, __) => Container(),
       ),
     )

@@ -22,13 +22,18 @@ class SupabaseSource<T> extends Source<T> {
   Future<void> delete(
     String id, {
     Map<String, dynamic> param = const {},
+    String idKey = 'id',
   }) async {
-    await _builder.delete().eq('id', id);
+    await _builder.delete().eq(id, id);
   }
 
   @override
-  Future<T?> get(String id, {Map<String, dynamic> param = const {}}) async {
-    final query = _builder.select<PostgrestMap>().eq('id', id);
+  Future<T?> get(
+    String id, {
+    Map<String, dynamic> param = const {},
+    String idKey = 'id',
+  }) async {
+    final query = _builder.select<PostgrestMap>().eq(idKey, id);
     final data = await query.limit(1).single();
     return decoder(data);
   }
